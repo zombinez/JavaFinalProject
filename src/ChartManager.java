@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 public class ChartManager extends ApplicationFrame {
     public ChartManager(String[] countriesLabels, float[] economyValues, 
         String xAxisLabel, String yAxisLabel) {
-        super("Countries Economy Histogram");
+        super("Task 1");
         setContentPane(DisplayChart(CreateChart(countriesLabels, economyValues, xAxisLabel, yAxisLabel)));
     }
 
