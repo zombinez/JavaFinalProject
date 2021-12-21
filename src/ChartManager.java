@@ -11,7 +11,7 @@ public class ChartManager extends ApplicationFrame {
     public ChartManager(String[] countriesLabels, float[] economyValues, 
         String xAxisLabel, String yAxisLabel) {
         super("Task 1");
-        setContentPane(DisplayChart(CreateChart(countriesLabels, economyValues, xAxisLabel, yAxisLabel)));
+        setContentPane(CreateChartPanel(CreateChart(countriesLabels, economyValues, xAxisLabel, yAxisLabel)));
     }
 
     public JFreeChart CreateChart(String[] countriesLabels, float[] economyValues, String xAxisLabel, String yAxisLabel) throws RuntimeException{
@@ -25,7 +25,7 @@ public class ChartManager extends ApplicationFrame {
         return chart;
     }
 
-    public JPanel DisplayChart(JFreeChart chart) {
+    public JPanel CreateChartPanel(JFreeChart chart) {
         chart.setPadding(new RectangleInsets(4, 8, 2, 2));
         ChartPanel chartPanel = new ChartPanel(chart);
         chartPanel.setFillZoomRectangle(true);

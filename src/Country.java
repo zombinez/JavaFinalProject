@@ -1,5 +1,3 @@
-import java.util.Formatter;
-
 public class Country {
     private final String name;
     private final String region;
@@ -46,12 +44,8 @@ public class Country {
 
     @Override
     public String toString() {
-        var formatter = new Formatter();
-        
-        var result = formatter.format("Name: %s \n   Region: %s \n   Happines Rank: %d \n   Happines Score: %f \n   Standart Error: %f \n   Economy (GDP per Capita): %f \n   Family: %f \n   Health (Life Expectancy): %f \n   Freedom: %f \n   Trust (Goverment Corruption): %f \n   Generosity: %f \n   Dystopia Residual: %f",
+        return String.format("Name: %s \n   Region: %s \n   Happines Rank: %d \n   Happines Score: %f \n   Standart Error: %f \n   Economy (GDP per Capita): %f \n   Family: %f \n   Health (Life Expectancy): %f \n   Freedom: %f \n   Trust (Goverment Corruption): %f \n   Generosity: %f \n   Dystopia Residual: %f",
         name, region, happinesRank, happinesScore, standartError, economy, family, health, freedom, trust, generosity, dystopiaResidual).toString();
-        formatter.close();
-        return result;
     }
 
     public Object[] toParametersArray() {

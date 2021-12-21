@@ -1,12 +1,14 @@
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class CSVParser {
     private final ArrayList<Country> countries;
 
-    public CSVParser() {
+    public CSVParser() throws IOException, FileNotFoundException {
         var file = new File(System.getProperty("user.dir") + "\\data\\countries_happines_2015.csv");
         countries = new ArrayList<Country>();
         try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -19,8 +21,6 @@ public class CSVParser {
                     Float.parseFloat(parameters[11]));
                 countries.add(country);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
